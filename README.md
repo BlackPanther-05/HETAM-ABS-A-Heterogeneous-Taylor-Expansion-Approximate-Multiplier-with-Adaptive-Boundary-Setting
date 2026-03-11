@@ -18,7 +18,6 @@ A comprehensive RTL and simulation framework for evaluating approximate multipli
 - [Data Types Supported](#data-types-supported)
 - [Design Specifications](#design-specifications)
 - [Troubleshooting](#troubleshooting)
-- [Performance Metrics](#performance-metrics)
 
 ---
 
@@ -480,51 +479,6 @@ iverilog -g2012 RTL/approx_t.v RTL/bit_mask_sel.v
 chmod +x run_approx_sim.py
 python3 run_approx_sim.py        # Or use explicitly
 ```
-
----
-
-## 📊 Performance Metrics
-
-### Simulation Execution Time
-
-| Configuration | Execution Time | Notes |
-|---------------|----------------|-------|
-| WIDTH=8, 1 level | ~1.0s | 16K vectors |
-| WIDTH=24, 1 level | ~13s | 100K random vectors |
-| All levels (8-bit) | ~6.6s | 6 levels × 1.0s |
-| All levels (24-bit) | ~84s | 6 levels × 13s |
-| Full run (both designs) | ~94s | 18 configurations |
-
-### Hardware Results
-
-Results from Genus synthesis (28nm technology):
-
-| Design | Level | Area (μm²) | Power (mW) | Delay (ns) | Power-Area |
-|--------|-------|----------|-----------|-----------|-----------|
-| approx_t | 0 (exact) | ~15000 | 2.5 | 2.1 | Baseline |
-| approx_t | 5 (approx) | ~12000 | 1.8 | 1.6 | ↓ 28% |
-| approx_t_hetero | 0 (exact) | ~14500 | 2.4 | 2.0 | Baseline |
-| approx_t_hetero | 2 (approx) | ~11200 | 1.5 | 1.5 | ↓ 35% |
-
----
-
-## 📚 Application Integration
-
-### ML Model Inference
-
-Approximate multipliers are integrated into real models:
-
-1. **BERT-SST2** (`Application_Model/bert_sst2_L6/`)
-   - 6-layer BERT for sentiment analysis
-   - Inference accuracy vs approximation trade-off
-
-2. **HuBERT** (`Application_Model/HuBert_model/`)
-   - Audio processing model
-   - ECG time-series analysis
-
-3. **LeNet-5** (`Application_Model/Lenet-5_MNIST/`)
-   - MNIST digit recognition
-   - Simple CNN baseline
 
 ---
 
