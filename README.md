@@ -220,6 +220,4 @@ python3 run_approx_sim.py
 
 ---
 
-**Repository**: https://github.com/BlackPanther-05/HETAM-ABS-A-Heterogeneous-Taylor-Expansion-Approximate-Multiplier-with-Adaptive-Boundary-Setting
 
-**Last Updated**: March 2026
