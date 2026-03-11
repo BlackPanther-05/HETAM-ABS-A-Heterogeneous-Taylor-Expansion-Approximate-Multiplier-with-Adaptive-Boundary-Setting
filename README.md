@@ -85,10 +85,22 @@ HETAM-ABS/
 
 ## ✅ Prerequisites
 
+### Install iverilog
 ```bash
-# Required tools
-sudo apt install iverilog              # Icarus Verilog compiler & simulator
-python3 --version                       # Python 3.6+ (standard library only)
+sudo apt update
+sudo apt install -y iverilog
+iverilog -v              # Verify installation
+```
+
+### Install gtkwave
+```bash
+sudo apt install -y gtkwave
+gtkwave --version        # Verify installation
+```
+
+### Verify Python
+```bash
+python3 --version        # Must be 3.6+ (standard library only)
 ```
 
 ---
@@ -182,65 +194,6 @@ gtkwave vcd/approx_t/approx_t_w8_level0.vcd
 Location: `Simulation_log/` and `Simulation_log_proposed/`
 
 Console output and compilation messages.
-
----
-
-## 📝 Script Output Example
-
-```
-======================================================================
-  Approximate Multiplier Simulation Runner
-======================================================================
-  Project root : /path/to/project
-  Designs      : approx_t, approx_t_hetero
-  Widths       : [8, 24]
-  CSV output   : Simulation_Results/<design>/
-  VCD output   : vcd/<design>/
-  Total pairs  : 18
-======================================================================
-
-[OK] iverilog  : /usr/bin/iverilog
-[OK] vvp       : /usr/bin/vvp
-
-[OK] All source files present.
-
-======================================================================
-  DESIGN: approx_t
-======================================================================
-
-  approx_t | WIDTH = 8
-  
-  Compiling approx_t for WIDTH=8...
-  [OK]   Binary -> Test_Bench/approx_t/sim_w8
-
-    approx_t WIDTH=8  LEVEL=0
-  [OK]   Simulation done
-  [OK]   VCD verified: vcd/approx_t/approx_t_w8_level0.vcd (24MB)
-  [OK]   CSV : Simulation_Results/approx_t/results_w8_level0.csv (1MB)
-  [OK]   VCD : vcd/approx_t/approx_t_w8_level0.vcd (24MB)
-  
-  ...
-
-======================================================================
-  FINAL SUMMARY
-======================================================================
-
-  approx_t:
-    WIDTH=8:
-      Level 0: OK (1.1s)
-      Level 1: OK (1.0s)
-      ...
-    WIDTH=24:
-      Level 0: OK (13.0s)
-      ...
-
-  Total time : 94.4s
-
-  Output locations:
-    approx_t:
-      CSV : Simulation_Results/approx_t/results_wW_levelL.csv
-      VCD : vcd/approx_t/approx_t_wW_levelL.vcd
-```
 
 ---
 
