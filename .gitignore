@@ -1,0 +1,69 @@
+# Simulation outputs - auto-generated
+Simulation_Results/
+vcd/
+Simulation_log/
+Simulation_log_proposed/
+
+# Compiled Verilog simulation binaries
+Test_Bench/**/sim_w*
+Test_Bench_proposed/**/sim_w*
+
+# Python cache and virtual environments
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# IDE and editor directories
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+.project
+.pydevproject
+.settings/
+
+# EDA tool outputs (optional - keep synthesis results)
+# Genus/Cadence
+*.rpt
+*.log
+*.db
+
+# Vivado
+.Xil/
+*.xpr
+*.runs/
+*.srcs/
+*.hw
+
+# VCD backup files
+*.vcd.bak
+
+# CSV backups
+*.csv.bak
+
+# Misc
+*.tar.gz
+*.zip
+.tmp/
